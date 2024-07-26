@@ -17,4 +17,10 @@
         android:label="Pacientes"
         tools:layout="@layout/fragment_add_pacientes" />
 
+    <fragment
+        android:id="@+id/navigation_Detalles_Pacientes"
+        android:name="luis_dominguez.eduardo_sanchez.hospital_bloom.Detalles_Pacientes"
+        android:label="Detalles del paciente"
+        tools:layout="@layout/fragment_detalles_pacientes" />
+
 </navigation>

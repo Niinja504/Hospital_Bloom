@@ -4,14 +4,23 @@ import Modelo.Conexion
 import Modelo.dataClassPacientes
 import android.app.AlertDialog
 import android.content.Intent
+import android.os.Bundle
+import android.provider.Settings.Global.putString
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.findFragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import luis_dominguez.eduardo_sanchez.hospital_bloom.Detalles_Pacientes
 import luis_dominguez.eduardo_sanchez.hospital_bloom.R
 
 class Adaptador(var Datos: List<dataClassPacientes>): RecyclerView.Adapter<ViewHolder>() {
@@ -128,5 +137,27 @@ class Adaptador(var Datos: List<dataClassPacientes>): RecyclerView.Adapter<ViewH
             val dialog = builder.create()
             dialog.show()
         }
+
+
+
+        holder.itemView.setOnClickListener {
+            val bundle = Bundle().apply {
+                putString("nombres", item.nombres)
+                putString("tipo_sangre", item.tipo_sangre)
+                putString("telefono", item.telefono)
+                putString("enfermedad", item.enfermedad)
+                putString("fecha_nacimiento", item.fecha_nacimiento)
+                putString("hora_medicacion", item.hora_medicacion)
+                putInt("numero_habitacion", item.Numero_habitacion)
+                putInt("numero_cama", item.numero_cama)
+                putString("medicamentos", item.Medicamentos)
+            }
+            val navController = findNavController(holder.itemView)
+            navController.navigate(R.id.navigation_Detalles_Pacientes, bundle)
+        }
+    }
+    private fun findNavController(view: View): NavController {
+        val fragment = view.findFragment<Fragment>()
+        return NavHostFragment.findNavController(fragment)
     }
 }
