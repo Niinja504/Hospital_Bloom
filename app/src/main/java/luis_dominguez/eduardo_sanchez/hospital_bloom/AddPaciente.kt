@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.UUID
 
 class AddPaciente : Fragment() {
@@ -55,7 +56,7 @@ class AddPaciente : Fragment() {
         btn_Add = root.findViewById(R.id.btn_Agregar_Paciente)
 
         CampoNombres.filters = arrayOf(InputFilter.LengthFilter(15))
-        CampoS4ngr3.filters = arrayOf(InputFilter.LengthFilter(8))
+        CampoS4ngr3.filters = arrayOf(InputFilter.LengthFilter(5))
         CampoTelefono.filters = arrayOf(InputFilter.LengthFilter(11))
         CampoTelefono.inputType = InputType.TYPE_CLASS_NUMBER
         CampoTelefono.addTextChangedListener(TelefonoTextWatcher())
@@ -63,15 +64,19 @@ class AddPaciente : Fragment() {
         CampoHabitacion.filters = arrayOf(InputFilter.LengthFilter(4))
         CampoMedicamentos.filters = arrayOf(InputFilter.LengthFilter(100))
         CampoNacimiento.filters = arrayOf(InputFilter.LengthFilter(30))
+        CampoHabitacion.filters = arrayOf(InputFilter.LengthFilter(5))
+        CampoCama.filters = arrayOf(InputFilter.LengthFilter(5))
 
         CampoNombres.requestFocus()
 
         btn_Add.setOnClickListener {
-            if (validarCampos()){
+            if (validarCampos()) {
                 CoroutineScope(Dispatchers.IO).launch {
                     val objConexion = Conexion().cadenaConexion()
 
-                    val Add = objConexion?.prepareStatement("INSERT INTO Pacientes (UUID_paciente, nombres , tipo_sangre, telefono, enfermedad, fecha_nacimiento, hora_medicacion, Numero_habitacion, numero_cama) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ")!!
+                    val Add = objConexion?.prepareStatement(
+                        "INSERT INTO Pacientes (UUID_paciente, nombres, tipo_sangre, telefono, enfermedad, fecha_nacimiento, hora_medicacion, Numero_habitacion, numero_cama, Medicamentos) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                    )!!
 
                     Add.setString(1, UUID.randomUUID().toString())
                     Add.setString(2, CampoNombres.text.toString())
@@ -82,12 +87,26 @@ class AddPaciente : Fragment() {
                     Add.setString(7, CampoHora.text.toString())
                     Add.setInt(8, CampoHabitacion.text.toString().toInt())
                     Add.setInt(9, CampoCama.text.toString().toInt())
+                    Add.setString(10, CampoMedicamentos.text.toString())
                     Add.executeUpdate()
+                    LimpiarCampos()
                 }
             }
         }
 
+
         return root
+    }
+
+    private fun LimpiarCampos(){
+        CampoNombres.text.clear()
+        CampoS4ngr3.text.clear()
+        CampoTelefono.text.clear()
+        CampoEnfermedades.text.clear()
+        CampoNacimiento.text.clear()
+        CampoHora.text.clear()
+        CampoHabitacion.text.clear()
+        CampoMedicamentos.text.clear()
     }
 
     private fun validarCampos(): Boolean{

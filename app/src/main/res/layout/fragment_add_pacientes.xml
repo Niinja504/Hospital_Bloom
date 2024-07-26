@@ -10,7 +10,7 @@
     <EditText
         android:id="@+id/txt_Enfermedades"
         android:layout_width="332dp"
-        android:layout_height="80dp"
+        android:layout_height="60dp"
         android:background="@drawable/edittext_border"
         android:backgroundTint="@null"
         android:ems="10"
@@ -20,13 +20,15 @@
         android:minHeight="48dp"
         android:paddingStart="8dp"
         android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textColorHint="#675E5E"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359"
+        app:layout_constraintVertical_bias="0.35"
         tools:ignore="DuplicateIds,MissingConstraints,TouchTargetSizeCheck" />
 
     <Button
@@ -34,13 +36,13 @@
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:backgroundTint="#F38F9A"
-        android:text="Cerrar sesión"
+        android:text="Agregar paciente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.991"
+        app:layout_constraintVertical_bias="0.903"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -65,13 +67,16 @@
         android:ems="10"
         android:hint="Nombres"
         android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#675E5E"
+        android:textColorLink="#0C2040"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.085" />
 
     <EditText
         android:id="@+id/txt_Habitacion"
@@ -80,18 +85,21 @@
         android:ems="10"
         android:hint="N° Habitación"
         android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#675E5E"
+        android:textColorLink="#0C2040"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.447" />
 
     <EditText
         android:id="@+id/txt_Medicamentos"
         android:layout_width="332dp"
-        android:layout_height="80dp"
+        android:layout_height="60dp"
         android:background="@drawable/edittext_border"
         android:backgroundTint="@null"
         android:ems="10"
@@ -101,13 +109,15 @@
         android:minHeight="48dp"
         android:paddingStart="8dp"
         android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textColorHint="#675E5E"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678"
+        app:layout_constraintVertical_bias="0.627"
         tools:ignore="DuplicateIds,MissingConstraints,TouchTargetSizeCheck" />
 
     <EditText
@@ -117,13 +127,16 @@
         android:ems="10"
         android:hint="Fecha de nacimiento"
         android:inputType="date"
+        android:textColor="#000000"
+        android:textColorHint="#675E5E"
+        android:textColorLink="#0C2040"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.72" />
 
     <EditText
         android:id="@+id/txt_Telefono"
@@ -132,13 +145,16 @@
         android:ems="10"
         android:hint="N° Telefonico"
         android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#675E5E"
+        android:textColorLink="#0C2040"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256" />
+        app:layout_constraintVertical_bias="0.255" />
 
     <EditText
         android:id="@+id/txt_Cama"
@@ -147,13 +163,16 @@
         android:ems="10"
         android:hint="N° Cama"
         android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#675E5E"
+        android:textColorLink="#0C2040"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
+        app:layout_constraintVertical_bias="0.533" />
 
     <EditText
         android:id="@+id/txt_TipoSangre"
@@ -162,13 +181,16 @@
         android:ems="10"
         android:hint="Tipo de sangre"
         android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#675E5E"
+        android:textColorLink="#0C2040"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <EditText
         android:id="@+id/txt_Hora_Medicacion"
@@ -177,13 +199,16 @@
         android:ems="10"
         android:hint="Hora de aplicación de los medicamentos"
         android:inputType="time"
+        android:textColor="#000000"
+        android:textColorHint="#675E5E"
+        android:textColorLink="#0C2040"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.248"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.863" />
+        app:layout_constraintVertical_bias="0.806" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

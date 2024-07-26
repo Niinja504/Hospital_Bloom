@@ -3,7 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_Add_Paciente">
+    app:startDestination="@+id/navigation_Paciente">
+
+    <fragment
+        android:id="@+id/navigation_Paciente"
+        android:name="luis_dominguez.eduardo_sanchez.hospital_bloom.Pacientes"
+        android:label="Agregar paciente"
+        tools:layout="@layout/fragment_pacientes" />
 
     <fragment
         android:id="@+id/navigation_Add_Paciente"
@@ -11,9 +17,4 @@
         android:label="Pacientes"
         tools:layout="@layout/fragment_add_pacientes" />
 
-    <fragment
-        android:id="@+id/navigation_Paciente"
-        android:name="luis_dominguez.eduardo_sanchez.hospital_bloom.Pacientes"
-        android:label="Agregar paciente"
-        tools:layout="@layout/fragment_pacientes" />
 </navigation>
